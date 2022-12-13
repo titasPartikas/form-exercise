@@ -1,0 +1,102 @@
+* {
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    margin: 1rem;
+    background-color: beige;
+}
+
+.help-dialog {
+    display: none;
+    border: 1px solid black;
+    height: 315px;
+    width: 200px;
+    padding: 1rem;
+    background-color: aliceblue;
+    animation-name: dialog-open;
+    animation-duration: 0.5s;
+}
+
+.help-container {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.help-btn,
+#submit {
+    background-color: rgb(113, 113, 235);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.help-btn {
+    float: right;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.help-btn:hover,
+#submit:hover {
+    background-color: rgb(86, 86, 236);
+}
+
+.help-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+}
+
+.help-form input {
+    margin-bottom: 0.5rem;
+}
+
+.dialog-info-text {
+    font-size: 0.7rem;
+    margin-bottom: 1rem;
+}
+
+#complaint {
+    height: 80px;
+    resize: none;
+}
+
+.help-dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.help-dialog-close-btn {
+    border: none;
+    background-color: unset;
+    cursor: pointer;
+}
+
+#submit {
+    width: 100%;
+    padding: 0.25rem;
+}
+
+.validation-error {
+    display: none;
+    color: red;
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+}
+
+@keyframes dialog-open {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

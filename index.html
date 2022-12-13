@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <title>Events Exercise</title>
+</head>
+<body>
+    <div>
+        <p>First Name: <span id="first-name-log"></span></p>
+        <p>Last Name: <span id="last-name-log"></span></p>
+        <p>Email address: <span id="email-log"></span></p>
+        <p>Complaint: <span id="complaint-log"></span></p>
+        <p>Date of complaint: <span id="date-log"></span></p>
+    </div>
+    <div class="help-container">
+        <div class="help-dialog">
+            <div class="help-dialog-header">
+                <button class="help-dialog-close-btn">&times;</button>
+            </div>
+            <p class="dialog-info-text">We are here to help you, if you want to fill a complaint with us then please fill this form and submit it. We are pushing ourselves to meet all of our customers demands and will look into each and every complaint that we receive</p>
+            <form class="help-form">
+                <p class="validation-error">Please correct mistakes made in your complaint form.</p>
+                <label for="firstName">First name:
+                </label>
+                <input id="firstName" required>
+                <label for="lastName">Last name:
+                </label>
+                <input id="lastName" required>
+                <label for="email">Email:
+                </label>
+                <input id="email" type="email" required>
+                <label for="complaint">Complaint:
+                </label>
+                <textarea id="complaint" name="complaint" required></textarea>
+            </form>
+            <button id="submit">Submit</button>
+        </div>
+        <button class="help-btn">Help</button>
+    </div>
+</body>
+</html>
