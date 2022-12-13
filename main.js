@@ -7,6 +7,7 @@ const email = document.querySelector("#email");
 const complaint = document.querySelector("#complaint");
 const submitBtn = document.querySelector("#submit");
 const validationError = document.querySelector(".validation-error");
+const complaintsContainer = document.querySelector(".complaints-container");
 
 const firstNameLog = document.querySelector("#first-name-log");
 const lastNameLog = document.querySelector("#last-name-log");
@@ -38,11 +39,34 @@ function submitComplaint() {
 }
 
 function displayComplaint() {
-    firstNameLog.textContent = firstName.value;
-    lastNameLog.textContent = lastName.value;
-    emailLog.textContent = email.value;
-    complaintLog.textContent = complaint.value;
-    dateLog.textContent = new Date().toLocaleString();
+    // Create elements
+    const complaintContainer = document.createElement('div');
+    const firstNameParagraph = constructComplaintParagraph('First Name: ', 'first-name-log', firstName.value);
+    const lastNameParagraph = constructComplaintParagraph('Last Name: ', 'last-name-log', lastName.value);
+    const emailParagraph = constructComplaintParagraph('Email Address: ', 'email-log', email.value);
+    const complaintParagraph = constructComplaintParagraph('Complaint: ', 'complaint-log', complaint.value);
+    const dateOfComplaintParagraph = constructComplaintParagraph('Date of complaint: ', 'date-log', new Date().toLocaleString());
+    // Add attributes to elements
+    complaintContainer.classList.add('complaint-container');
+    // Append elements to document
+    complaintsContainer.append(complaintContainer);
+    complaintContainer.append(firstNameParagraph, lastNameParagraph, emailParagraph, complaintParagraph, dateOfComplaintParagraph);
+}
+
+function constructComplaintParagraph(paragraphTitle, spanId, complaintValue) {
+    console.log(complaintValue);
+    // Create elements
+    const paragraph = document.createElement('p');
+    const span = document.createElement('span');
+    // Add attributes to elements
+    span.id = spanId;
+    // Insert text content
+    paragraph.textContent = paragraphTitle;
+    span.textContent = complaintValue;
+    // append span to paragraph
+    paragraph.append(span);
+    // return constructed paragraph
+    return paragraph;
 }
 
 function clearDialogValues() {
