@@ -9,16 +9,9 @@ const submitBtn = document.querySelector("#submit");
 const validationError = document.querySelector(".validation-error");
 const complaintsContainer = document.querySelector(".complaints-container");
 
-const firstNameLog = document.querySelector("#first-name-log");
-const lastNameLog = document.querySelector("#last-name-log");
-const emailLog = document.querySelector("#email-log");
-const complaintLog = document.querySelector("#complaint-log");
-const dateLog = document.querySelector("#date-log");
-
 helpBtn.addEventListener("click", openDialog);
 dialogCloseBtn.addEventListener("click", closeDialog);
-submitBtn.addEventListener("click", submitComplaint)
-
+submitBtn.addEventListener("click", submitComplaint);
 
 function openDialog() {
     helpDialog.style.display = "block";    
@@ -54,7 +47,6 @@ function displayComplaint() {
 }
 
 function constructComplaintParagraph(paragraphTitle, spanId, complaintValue) {
-    console.log(complaintValue);
     // Create elements
     const paragraph = document.createElement('p');
     const span = document.createElement('span');
@@ -101,9 +93,7 @@ function isComplaintValid() {
     return true;
 }
 
-function applyErrorToField(field) {
-    field.style.border = "1px solid red";
-}
+
 
 function clearErrors() {
     validationError.style.display = "none";
@@ -111,6 +101,10 @@ function clearErrors() {
     clearErrorFromField(lastName);
     clearErrorFromField(email);
     clearErrorFromField(complaint);
+}
+
+function applyErrorToField(field) {
+    field.style.border = "1px solid red";
 }
 
 function clearErrorFromField(field) {
